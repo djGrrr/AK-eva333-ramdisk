@@ -45,6 +45,8 @@ zImage
 
 # build dir
 build/
+zip/
+cwm/system/lib/modules/
 
 #
 # Top-level generic files
