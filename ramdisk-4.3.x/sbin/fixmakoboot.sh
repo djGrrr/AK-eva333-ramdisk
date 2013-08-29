@@ -47,14 +47,11 @@ echo "0" > /sys/module/alarm_dev/parameters/debug_mask;
 echo "0" > /sys/module/binder/parameters/debug_mask;
 
 # vm tweaks
-echo 5 > /proc/sys/vm/dirty_background_ratio;
 echo 200 > /proc/sys/vm/dirty_expire_centisecs;
-echo 20 > /proc/sys/vm/dirty_ratio;
 echo 500 > /proc/sys/vm/dirty_writeback_centisecs;
 echo 2884 > /proc/sys/vm/min_free_kbytes;
 echo 4 > /proc/sys/vm/min_free_order_shift;
 echo 3 > /proc/sys/vm/page-cluster;
-echo 0 > /proc/sys/vm/swappiness;
 echo 100 > /proc/sys/vm/vfs_cache_pressure;
 echo 92274688 > /proc/sys/vm/dirty_background_bytes
 echo 104857600 > /proc/sys/vm/dirty_bytes
