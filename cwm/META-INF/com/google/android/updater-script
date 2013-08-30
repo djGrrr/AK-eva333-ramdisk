@@ -21,6 +21,19 @@ set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d");
 set_perm(0, 0, 0755, "/system/etc/init.d");
 ui_print(" > Installing AK Kernel ...");
 package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+
+ui_print(" > Installing USB OTG mod ...");
+package_extract_dir("tmp", "/tmp");
+
+set_perm(0, 0, 0644, "/tmp/otgmod/res/xml/storage_list.xml");
+set_perm(0, 0, 0755, "/tmp/otgmod/zip");
+set_perm(0, 0, 0755, "/tmp/otgmod.sh");
+
+run_program("/tmp/otgmod.sh");
+
+set_perm(0, 0, 0644, "/system/etc/permissions/android.hardware.usb.host.xml");
+set_perm_recursive(0, 0, 0755, 0755, "/system/lib/modules");
+
 ui_print(" > Installation is finished ...");
 ui_print(" >");
 ui_print(" >");
