@@ -7,7 +7,7 @@
 bb=/sbin/bb/busybox;
 
 # Stop mpDecision at boot
-#stop mpdecision
+stop mpdecision
 
 $bb mount -o rw,remount /system;
 
@@ -47,14 +47,10 @@ echo "0" > /sys/module/alarm_dev/parameters/debug_mask;
 echo "0" > /sys/module/binder/parameters/debug_mask;
 
 # vm tweaks
-echo 200 > /proc/sys/vm/dirty_expire_centisecs;
-echo 500 > /proc/sys/vm/dirty_writeback_centisecs;
 echo 2884 > /proc/sys/vm/min_free_kbytes;
 echo 4 > /proc/sys/vm/min_free_order_shift;
 echo 3 > /proc/sys/vm/page-cluster;
 echo 100 > /proc/sys/vm/vfs_cache_pressure;
-echo 92274688 > /proc/sys/vm/dirty_background_bytes
-echo 104857600 > /proc/sys/vm/dirty_bytes
 echo 1 > /proc/sys/vm/overcommit_memory
 
 # lmk tweaks
