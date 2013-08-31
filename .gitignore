@@ -37,7 +37,7 @@ piggy.xzkern
 piggy.xzkern.S
 arch/arm/boot/compressed/ashldi3.S
 arch/arm/boot/compressed/piggy.xzkern
-*.ko
+cwm/system/lib/modules/*
 mkboot
 zip
 boot.img
@@ -46,7 +46,6 @@ zImage
 # build dir
 build/
 zip/
-cwm/system/lib/modules/
 
 #
 # Top-level generic files
@@ -71,7 +70,6 @@ bin/kernel/zImage
 # git files that we don't want to ignore even it they are dot-files
 #
 !.gitignore
-!.mailmap
 
 #
 # Generated include files
