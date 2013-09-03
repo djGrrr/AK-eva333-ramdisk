@@ -469,7 +469,7 @@ on property:sys.boot_completed=1
 
 # Set Auto Hotplug Parameters after sysboot completed
   write /sys/module/dyn_hotplug/parameters/enabled 0
-  #write /sys/module/intelli_plug/parameters/intelli_plug_active 1
+  write /sys/module/intelli_plug/parameters/intelli_plug_active 1
 
 # Set GPU Parameters after sysboot completed
   #write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/trustzone/governor simple
