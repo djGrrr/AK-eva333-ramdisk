@@ -243,14 +243,14 @@ on post-fs-data
     write /sys/module/pm_8x60/modes/cpu2/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 95
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 20000
-    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "interactive"
+    #write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 95
+    #write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 20000
+    #write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
+    #write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
@@ -267,32 +267,32 @@ on post-fs-data
     restorecon /sys/devices/platform/kcal_ctrl.0/kcal
     restorecon /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
 
-on charger
+#on charger
     # Enable Power modes and set the CPU Freq Sampling rates
-    write /sys/module/rpm_resources/enable_low_power/L2_cache 1
-    write /sys/module/rpm_resources/enable_low_power/pxo 1
-    write /sys/module/rpm_resources/enable_low_power/vdd_dig 1
-    write /sys/module/rpm_resources/enable_low_power/vdd_mem 1
-    write /sys/module/pm_8x60/modes/cpu0/power_collapse/suspend_enabled 1
-    write /sys/module/pm_8x60/modes/cpu1/power_collapse/suspend_enabled 1
-    write /sys/module/pm_8x60/modes/cpu2/power_collapse/suspend_enabled 1
-    write /sys/module/pm_8x60/modes/cpu3/power_collapse/suspend_enabled 1
-    write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
-    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu1/online 0
-    write /sys/devices/system/cpu/cpu2/online 0
-    write /sys/devices/system/cpu/cpu3/online 0
+    #write /sys/module/rpm_resources/enable_low_power/L2_cache 1
+    #write /sys/module/rpm_resources/enable_low_power/pxo 1
+    #write /sys/module/rpm_resources/enable_low_power/vdd_dig 1
+    #write /sys/module/rpm_resources/enable_low_power/vdd_mem 1
+    #write /sys/module/pm_8x60/modes/cpu0/power_collapse/suspend_enabled 1
+    #write /sys/module/pm_8x60/modes/cpu1/power_collapse/suspend_enabled 1
+    #write /sys/module/pm_8x60/modes/cpu2/power_collapse/suspend_enabled 1
+    #write /sys/module/pm_8x60/modes/cpu3/power_collapse/suspend_enabled 1
+    #write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
+    #write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
+    #write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
+    #write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
+    #write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "powersave"
+    #write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
+    #write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
+    #write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
+    #write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
+    #write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    #write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    #write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    #write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
+    #write /sys/devices/system/cpu/cpu1/online 0
+    #write /sys/devices/system/cpu/cpu2/online 0
+    #write /sys/devices/system/cpu/cpu3/online 0
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
@@ -460,16 +460,16 @@ service fixmakoboot /sbin/fixmakoboot.sh
 # Set Interactive Parameters after sysboot completed
 on property:sys.boot_completed=1
   #write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 10000
-  #write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 95
+  write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 95
   #write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 500000
   #write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 50000
-  #write /sys/devices/system/cpu/cpufreq/interactive/target_loads 85
+  write /sys/devices/system/cpu/cpufreq/interactive/target_loads 85
   write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-  write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1026000
+  #write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1026000
 
 # Set Auto Hotplug Parameters after sysboot completed
   write /sys/module/dyn_hotplug/parameters/enabled 0
-  write /sys/module/intelli_plug/parameters/intelli_plug_active 1
+  write /sys/module/intelli_plug/parameters/intelli_plug_active 0
 
 # Set GPU Parameters after sysboot completed
   #write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/trustzone/governor simple
