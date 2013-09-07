@@ -457,7 +457,11 @@ service fixmakoboot /sbin/fixmakoboot.sh
     class main
     oneshot
 
-# Set Interactive Parameters after sysboot completed
+#
+# Set Parameters after sysboot completed
+#
+
+## Interactive tunables
 on property:sys.boot_completed=1
   #write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 10000
   #write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 95
@@ -467,10 +471,13 @@ on property:sys.boot_completed=1
   write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
   #write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1026000
 
-# Set Auto Hotplug Parameters after sysboot completed
+## Hotplug governors
   write /sys/module/dyn_hotplug/parameters/enabled 0
   write /sys/module/intelli_plug/parameters/intelli_plug_active 0
 
-# Set GPU Parameters after sysboot completed
+## GPU Parameters
   #write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/trustzone/governor simple
   write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk 400000000
+
+## Dynamic fsync
+  write /sys/kernel/dyn_fsync/Dyn_fsync_active 0
